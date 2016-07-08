@@ -1,0 +1,2 @@
+module LaunchPagesHelper
+end

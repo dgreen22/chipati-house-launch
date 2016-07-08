@@ -1,0 +1,2 @@
+class LaunchPagesController < ApplicationController
+end

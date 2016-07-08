@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LaunchPageControllerTest < ActionController::TestCase
+class LaunchPagesControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
