@@ -77,7 +77,12 @@ text-align: center;
       rgba(0, 0, 0, 0.6)
     ),url(image-path("bg-1.jpg"));
   	background-size: cover;
-  	background-repeat: no-repeat;    
+  	background-repeat: no-repeat;
+  	 background-position: center;
+    background-attachment: fixed;       
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;    
 }
 
 
