@@ -1,0 +1,57 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
+
+
+
+
+
+$(document).ready(function(){ 
+	 
+	 if (window.matchMedia("(max-width: 767px)").matches) {
+		  var images = [
+			    "<%= asset_path('bg-1-mobile.jpeg') %>",
+			    "<%= asset_path('bg-2-mobile.jpeg') %>",
+			    "<%= asset_path('bg-3-mobile.jpeg') %>",
+			    "<%= asset_path('bg-4-mobile.jpeg') %>"
+				];
+		} else {
+		  var images = [
+			    "<%= asset_path('bg-1.jpg') %>",
+			    "<%= asset_path('bg-2.jpg') %>",
+			    "<%= asset_path('bg-3.jpg') %>",
+			    "<%= asset_path('bg-4.jpg') %>"
+				];
+		}
+	  
+	  
+	  var nextImageIndex = 1;
+	  
+	  // Set first image
+	  $('.wrapper').css("background-image", "linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("+images[0]+")"
+			);
+	  
+	  setInterval(function() {
+	    $('.wrapper').fadeOut(function() {
+	      $(this).css("background-image", "linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("+images[nextImageIndex]+")"
+			);
+	      nextImageIndex = (nextImageIndex + 1) % 4;
+	    }).fadeIn();
+	  }, 4000);
+
+});
+
+
